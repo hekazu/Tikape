@@ -5,11 +5,11 @@ import java.sql.*;
 public class Viesti {
     private int id;
     private String sisalto;
-    private Date aikaleima;
+    private Timestamp aikaleima;
     private String kirjoittaja;
     private Lanka lanka;
 
-    public Viesti(int id, String sisalto, Date aikaleima, String kirjoittaja, Lanka lanka) {
+    public Viesti(int id, String sisalto, Timestamp aikaleima, String kirjoittaja, Lanka lanka) {
         this.id = id;
         this.sisalto = sisalto;
         this.aikaleima = aikaleima;
@@ -25,7 +25,7 @@ public class Viesti {
         return sisalto;
     }
 
-    public Date getAikaleima() {
+    public Timestamp getAikaleima() {
         return aikaleima;
     }
 
@@ -36,7 +36,4 @@ public class Viesti {
     public Lanka getLanka() {
         return lanka;
     }
-    
-    
 }
-
