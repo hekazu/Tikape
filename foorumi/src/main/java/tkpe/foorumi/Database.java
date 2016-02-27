@@ -5,17 +5,34 @@ import java.util.*;
 
 public class Database<T> {
 
+    private String address;
     private boolean debug;
     private Connection connection;
 
     public Database(String address) throws Exception {
+        this.address = address;
         this.connection = DriverManager.getConnection(address);
     }
 
+    public Connection getConnection() throws SQLException {
+        return connection;
+    }
+    
     public void setDebugMode(boolean d) {
         debug = d;
     }
+    
+    private void debug(ResultSet rs) throws SQLException {
+        int columns = rs.getMetaData().getColumnCount();
+        for (int i = 0; i < columns; i++) {
+            System.out.print(
+                    rs.getObject(i + 1) + ":"
+                    + rs.getMetaData().getColumnName(i + 1) + "  ");
+        }
 
+        System.out.println();
+    }
+    
     public List<T> queryAndCollect(String query, Collector<T> col) throws SQLException {
         List<T> rows = new ArrayList<>();
         Statement stmt = connection.createStatement();
@@ -35,17 +52,6 @@ public class Database<T> {
         rs.close();
         stmt.close();
         return rows;
-    }
-
-    private void debug(ResultSet rs) throws SQLException {
-        int columns = rs.getMetaData().getColumnCount();
-        for (int i = 0; i < columns; i++) {
-            System.out.print(
-                    rs.getObject(i + 1) + ":"
-                    + rs.getMetaData().getColumnName(i + 1) + "  ");
-        }
-
-        System.out.println();
     }
     
     public int update(String updateQuery) throws SQLException {
