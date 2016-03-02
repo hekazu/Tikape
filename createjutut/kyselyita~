@@ -1,0 +1,5 @@
+SELECT a.nimi Alue, v.id, v.aikaleima FROM Alue a JOIN Lanka l ON a.id=l.alue JOIN Viesti v ON l.id=v.lanka;
+
+
+SELECT a.nimi Alue, COUNT(v.id) viestit, MAX(v.aikaleima) FROM Alue a JOIN Lanka l ON a.id=l.alue JOIN Viesti v ON l.id=v.lanka GROUP BY a.nimi;
+

@@ -1,0 +1,6 @@
+INSERT INTO Alue (nimi) VALUES ("Hevoset");
+INSERT INTO Alue (nimi) VALUES ("Kissat");
+INSERT INTO Alue (nimi) VALUES ("Koirat");
+INSERT INTO Alue (nimi) VALUES ("Kuhat");
+INSERT INTO Alue (nimi) VALUES ("Särjet");
+INSERT INTO Alue (nimi) VALUES ("Puput");

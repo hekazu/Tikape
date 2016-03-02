@@ -1,0 +1,7 @@
+INSERT INTO Lanka (otsikko, alue) VALUES ("Hevoset on niiiiiin ihaniii!!11", 1);
+INSERT INTO Lanka (otsikko, alue) VALUES ("Miksie farmig simulatorissa ol hevozia??", 1);
+INSERT INTO Lanka (otsikko, alue) VALUES ("KISSSOJA!", 2);
+INSERT INTO Lanka (otsikko, alue) VALUES ("Vaan kuhajutut", 5);
+INSERT INTO Lanka (otsikko, alue) VALUES ("En tajuu oikeesti auttakaa", 6);
+
+

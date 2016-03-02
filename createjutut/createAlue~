@@ -1,0 +1,1 @@
+CREATE TABLE Viesti (id integer PRIMARY KEY, otsikko varchar(50) NOT NULL, kirjoittaja varchar(30) NOT NULL, alue integer NOT NULL, FOREIGN KEY(alue) REFERENCES Alue(id));

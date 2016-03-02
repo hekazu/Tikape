@@ -1,0 +1,6 @@
+INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("Siis oikeesti mä oon aina tykänny pupuista jo ennenku ne oli pop", datetime("now"), 5, "puputtaja");
+INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("Mulla on oma hevonen lälläslää", datetime("now"), 1, "Heppatytt05");
+INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("kuha on särki", datetime("now"), 4, "tekispä");
+INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("Minkä takia farming simulaattorissa ei ole hevosia? Se peli olis just paras ja pelaisin ihan kokoajan siis ainaki 48/7 hei pliis voix joku hoitaa????!!", datetime("now"), 2, "f4rmvi11e4eva");
+INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("myydään kolme kissanpentua soita numeroon 0405556666", datetime("now"), 3, "anonymousäläsoita");
+INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("mee pois", datetime("now"), 1, "jkarttu");
