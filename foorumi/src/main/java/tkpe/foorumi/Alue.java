@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Alue {
 
-    private final int id;
+    private int id;
     private String nimi;
     private List<Lanka> langat;
 
@@ -13,25 +13,32 @@ public class Alue {
         this.nimi = nimi;
     }
 
-    public Alue(int id, String nimi, List<Lanka> langat) {
-        this.id = id;
+    public Alue(String nimi, List<Lanka> langat) {
         this.nimi = nimi;
-        this.langat = langat;
+        this.langat = new ArrayList<>();
     }
 
     public int getId() {
         return id;
     }
 
-    public String getNimi() {
-        return nimi;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public List<Lanka> getLangat() {
         return langat;
     }
 
+    public void setLangat(List<Lanka> langat) {
+        this.langat = langat;
+    }
+
+    public String getNimi() {
+        return nimi;
+    }
+
     public void setNimi(String nimi) {
         this.nimi = nimi;
-    }    
+    }
 }
