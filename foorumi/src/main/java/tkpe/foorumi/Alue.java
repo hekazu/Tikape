@@ -8,12 +8,7 @@ public class Alue {
     private String nimi;
     private List<Lanka> langat;
 
-    public Alue(int id, String nimi) {
-        this.id = id;
-        this.nimi = nimi;
-    }
-
-    public Alue(String nimi, List<Lanka> langat) {
+    public Alue(String nimi) {
         this.nimi = nimi;
         this.langat = new ArrayList<>();
     }
