@@ -12,7 +12,6 @@ public class Viesti {
 
     public Viesti(String sisalto, String kirjoittaja) {
         this.sisalto = sisalto;
-        this.aika = Timestamp.valueOf(LocalDateTime.now());
         this.kirjoittaja = kirjoittaja;
     }
 
