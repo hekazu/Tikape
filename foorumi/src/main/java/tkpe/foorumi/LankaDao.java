@@ -1,24 +1,22 @@
 package tkpe.foorumi;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Collection;
-import java.util.List;
+import java.sql.*;
+import java.util.*;
 
-public class LankaDao implements Dao<Object, Object>{
-    
+public class LankaDao implements Dao<Lanka, Integer> {
+
     private Database database;
+    private Dao<Alue, Integer> alueDao;
 
-    public LankaDao(Database database) {
+    public LankaDao(Database database, Dao<Alue, Integer> alueDao) {
         this.database = database;
+        this.alueDao = alueDao;
     }
 
     @Override
-    public Lanka findOne(Object key) throws SQLException {
+    public Lanka findOne(Integer key) throws SQLException {
         Connection connection = database.getConnection();
-        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Lanka WHERE otsikko = ?");
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Lanka WHERE id = ?");
         stmt.setObject(1, key);
 
         ResultSet rs = stmt.executeQuery();
@@ -27,30 +25,34 @@ public class LankaDao implements Dao<Object, Object>{
             return null;
         }
 
-        int id = rs.getInt("id");
+        Integer id = rs.getInt("id");
         String otsikko = rs.getString("otsikko");
+        Integer alue = rs.getInt("alue");
 
-        Lanka l = new Lanka(id, otsikko);
+        Lanka l = new Lanka(otsikko);
 
         rs.close();
         stmt.close();
         connection.close();
 
+        l.setId(id);
+        l.setAlue(this.alueDao.findOne(alue));
+
         return l;
     }
 
     @Override
-    public List<Object> findAll() throws SQLException {
+    public List<Lanka> findAll() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Object key) throws SQLException {
+    public List<Lanka> findAllIn(Collection<Integer> keys) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Object> findAllIn(Collection<Object> keys) throws SQLException {
+    public void delete(Integer key) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
