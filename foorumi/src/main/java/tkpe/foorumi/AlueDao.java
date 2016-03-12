@@ -39,7 +39,26 @@ public class AlueDao implements Dao<Alue, Integer> {
 
     @Override
     public List<Alue> findAll() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection con = database.getConnection();
+        PreparedStatement stmt = con.prepareStatement("SELECT * FROM Alue");
+        ResultSet rs = stmt.executeQuery();
+        
+        List<Alue> alueet = new ArrayList<>();
+        
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nimi = rs.getString("nimi");
+            
+            Alue a = new Alue(nimi);
+            a.setId(id);
+            
+            alueet.add(a);
+        }
+        rs.close();
+        stmt.close();
+        con.close();
+        
+        return alueet;
     }
 
     @Override
