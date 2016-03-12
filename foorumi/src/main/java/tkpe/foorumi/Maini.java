@@ -9,7 +9,7 @@ public class Maini {
         ViestiDao viestiDao = new ViestiDao(database, lankaDao);
 
         Viesti viesti = viestiDao.findOne(4);
-        System.out.println("ID: " + viesti.getId() + ". Kirjoittaja: " + viesti.getKirjoittaja() + " " + viesti.getAikaleima() + ", Viesti: " + viesti.getSisalto());
+        System.out.println("ID: " + viesti.getId() + ". Kirjoittaja: " + viesti.getKirjoittaja() + " " + viesti.getAika() + ", Viesti: " + viesti.getSisalto());
         // toimii muilla luokilla vastaava paitsi täällä ViestiDaolla. Ongelma on ViestiDao:n findOne-metodin TimeStamp-oliossa jollain tasolla.
     }
 }

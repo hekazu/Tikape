@@ -43,7 +43,44 @@ public class LankaDao implements Dao<Lanka, Integer> {
 
     @Override
     public List<Lanka> findAll() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection con = database.getConnection();
+        PreparedStatement stmt = con.prepareStatement("SELECT * FROM Lanka");
+        ResultSet rs = stmt.executeQuery();
+        
+        Map<Integer, List<Lanka>> lankojenAlueet = new HashMap<>();
+        
+        List<Lanka> langat = new ArrayList<>();
+        
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String otsikko = rs.getString("otsikko");
+            
+            Lanka l = new Lanka(otsikko);
+            l.setId(id);
+            
+            int fk = rs.getInt("alue");
+            
+            if (!lankojenAlueet.containsKey(fk)) {
+                lankojenAlueet.put(fk, new ArrayList<>());
+            }
+            lankojenAlueet.get(fk).add(l);
+        }
+        
+        rs.close();
+        stmt.close();
+        con.close();
+        
+        for (Alue alue : this.alueDao.findAll()) {
+            if (!lankojenAlueet.containsKey(alue.getId())) {
+                continue;
+            }
+            
+            for (Lanka lanka : lankojenAlueet.get(alue.getId())) {
+                lanka.setAlue(alue);
+            }
+        }
+        
+        return langat;
     }
 
     @Override
