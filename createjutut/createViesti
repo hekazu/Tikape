@@ -1,1 +1,8 @@
-CREATE TABLE Viesti (id integer PRIMARY KEY, sisalto text NOT NULL, aikaleima timestamp, kirjoittaja varchar(30) NOT NULL, lanka integer NOT NULL, FOREIGN KEY(lanka) REFERENCES Lanka(id));
+CREATE TABLE Viesti (
+id integer PRIMARY KEY, 
+sisalto varchar(1000) NOT NULL,
+aikaleima timestamp, 
+kirjoittaja varchar(30) NOT NULL, 
+lanka integer NOT NULL, 
+FOREIGN KEY(lanka) REFERENCES Lanka(id)
+);
