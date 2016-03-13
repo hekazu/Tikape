@@ -15,7 +15,7 @@ public class Maini {
         
         get("/", (req, res) -> {
             HashMap map = new HashMap<>();
-
+            
             return new ModelAndView(map, "index");
         }, new ThymeleafTemplateEngine());
         
