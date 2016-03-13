@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* foorumi/src/main/java/tkpe
+web:    java -cp target/classes:target/dependency/* tkpe.foorumi.Maini
