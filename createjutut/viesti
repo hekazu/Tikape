@@ -2,7 +2,7 @@ CREATE TABLE Viesti
 (
     id integer PRIMARY KEY,
 	sisalto text,
-	aikaleima datetime,
+	aikaleima timestamp,
 	kayttaja integer NOT NULL,
 	lanka integer NOT NULL,
 	FOREIGN KEY(kayttaja) REFERENCES Kayttaja(id),
