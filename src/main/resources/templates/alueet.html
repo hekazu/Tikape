@@ -6,9 +6,8 @@
     </head>
     <body>
         <ul>
-            <li th:each="lanka: ${langat}">
-                <span th:text="${lanka.otsikko}">otsikko</span>
-                <span th:text="${lanka.tuoreinViesti.aika}">aika</span>
+            <li th:each="alue: ${alueet}">
+                <span th:text="${alue.nimi}">nimi</span>
             </li>
         </ul>
     </body>

@@ -18,13 +18,27 @@ public class Maini {
         LankaDao lankaDao = new LankaDao(database, alueDao);
         ViestiDao viestiDao = new ViestiDao(database, lankaDao);
         
+        
+        /*
+        
+                TODENNÄKÖISESTI GET() FUNKTIOT TÄYTYY YHDISTÄÄ JOTENKIN
+                ALUEIDEN TULOSTUS TOIMII, MUUT PALAUTTAA 404
+        
+        */
+        
+        
         // ALUEIDEN TULOSTUS
+        get("/", (req, res) -> {
+            HashMap map = new HashMap();
+            map.put("alueet", alueDao.findAll());
+            return new ModelAndView(map, "alueet");
+        }, new ThymeleafTemplateEngine());
         
         // ALUEEN TULOSTUS
         get("/alue", (req, res) -> {
             HashMap map = new HashMap();
             map.put("langat", alueDao.findOne(Integer.parseInt(req.params("alue"))));
-            return new ModelAndView(null, null);
+            return new ModelAndView(map, "alue");
         }, new ThymeleafTemplateEngine());
         
         // LANGAN TULOSTUS
