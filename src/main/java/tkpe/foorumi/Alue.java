@@ -20,9 +20,19 @@ public class Alue {
     public void setId(int id) {
         this.id = id;
     }
-
+    
     public List<Lanka> getLangat() {
         return langat;
+    }
+    
+    public List<Lanka> getLangatSorted(){
+        List<Lanka> l = getLangat();
+        Collections.sort(l, 
+                (l1, l2) -> l1.getTuoreinViesti().getAika()
+                        .compareTo(
+                                l2.getTuoreinViesti().getAika())
+        );
+        return l;
     }
 
     public void setLangat(List<Lanka> langat) {

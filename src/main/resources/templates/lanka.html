@@ -1,0 +1,16 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lanka</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <ul>
+            <li th:each="viesti: ${viestit}">
+                <span th:text="${viesti.kirjoittaja}">kirjoittaja</span>
+                <span th:text="${viesti.aika}">aika</span>
+                <span th:text="${viesti.sisalto}">sisalto</span>
+            </li>
+        </ul>
+    </body>
+</html>
