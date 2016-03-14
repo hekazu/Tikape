@@ -1,2 +1,6 @@
-CREATE TABLE Alue (id integer PRIMARY KEY, nimi text);
+CREATE TABLE Alue 
+(
+	id integer PRIMARY KEY, 
+	nimi varchar(50)
+);
 

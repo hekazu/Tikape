@@ -1,6 +1,6 @@
-INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("Siis oikeesti mä oon aina tykänny pupuista jo ennenku ne oli pop", CURRENT_TIMESTAMP, 5, "puputtaja");
-INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("Mulla on oma hevonen lälläslää", CURRENT_TIMESTAMP, 1, "Heppatytt05");
-INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("kuha on särki", CURRENT_TIMESTAMP, 4, "tekispä");
-INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("Minkä takia farming simulaattorissa ei ole hevosia? Se peli olis just paras ja pelaisin ihan kokoajan siis ainaki 48/7 hei pliis voix joku hoitaa????!!", CURRENT_TIMESTAMP, 2, "f4rmvi11e4eva");
-INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("myydään kolme kissanpentua soita numeroon 0405556666", CURRENT_TIMESTAMP, 3, "anonymousäläsoita");
-INSERT INTO Viesti (sisalto, aikaleima, lanka, kirjoittaja) VALUES ("mee pois", CURRENT_TIMESTAMP, 1, "kartunviskoja");
+INSERT INTO Viesti (sisalto, lanka, kirjoittaja) VALUES ("Siis oikeesti mä oon aina tykänny pupuista jo ennenku ne oli pop", 5, "puputtaja");
+INSERT INTO Viesti (sisalto, lanka, kirjoittaja) VALUES ("Mulla on oma hevonen lälläslää", 1, "Heppatytt05");
+INSERT INTO Viesti (sisalto, lanka, kirjoittaja) VALUES ("kuha on särki", 4, "tekispä");
+INSERT INTO Viesti (sisalto, lanka, kirjoittaja) VALUES ("Minkä takia farming simulaattorissa ei ole hevosia? Se peli olis just paras ja pelaisin ihan kokoajan siis ainaki 48/7 hei pliis voix joku hoitaa????!!", 2, "f4rmvi11e4eva");
+INSERT INTO Viesti (sisalto, lanka, kirjoittaja) VALUES ("myydään kolme kissanpentua soita numeroon 0405556666", 3, "anonymousäläsoita");
+INSERT INTO Viesti (sisalto, lanka, kirjoittaja) VALUES ("mee pois", 1, "kartunviskoja");
